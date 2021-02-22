@@ -23,3 +23,7 @@ $lines = [
 $Bills = new BillCollection($lines);
 $Calculator = new Calculator($Bills);
 $Calculator->printBill();
+
+echo PHP_EOL . "Optimized calculation:" . PHP_EOL;
+$Calculator->setIsOptimized(true);
+$Calculator->printBill();

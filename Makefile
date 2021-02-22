@@ -18,5 +18,8 @@ dump-autoload:
 run:
 	docker run -it --rm -v ${PWD}:/calculator ${REPO}/${IMAGE_NAME}:${VERSION} php /calculator/src/index.php
 
+test:
+	docker run -it --rm -v ${PWD}:/calculator ${REPO}/${IMAGE_NAME}:${VERSION} php /calculator/vendor/bin/phpunit /calculator/tests
+
 shell:
 	docker-compose run calculator bash

@@ -10,7 +10,7 @@ build:
 	docker build -t ${REPO}/${IMAGE_NAME}:${VERSION} .
 
 composer-install:
-	docker run -it --rm -v ${PWD}:/calculator ${REPO}/${IMAGE_NAME}:${VERSION} composer --working-dir=/calculator/ install
+	docker run -it --rm -v ${PWD}:/calculator ${REPO}/${IMAGE_NAME}:${VERSION} composer --working-dir=/calculator/ update
 
 dump-autoload:
 	docker run -it --rm -v ${PWD}:/calculator ${REPO}/${IMAGE_NAME}:${VERSION} composer --working-dir=/calculator/ -- dump
